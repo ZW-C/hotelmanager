@@ -25,9 +25,5 @@ public class HotelTest {
     public void test1(){
         System.out.println("我在测试。。。");
     }
-    @Test
-    public void test2(){
-        System.out.println("我在测试22。。。");
-    }
 
 }
