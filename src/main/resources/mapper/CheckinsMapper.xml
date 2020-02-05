@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.newer.mapper.CheckinsMapper">
+    <resultMap id="checkins" type="Checkins">
+        <id property="cid" column="cid"/>
+        <result property="name" column="name"/>
+        <result property="gender" column="gender"/>
+        <result property="cardtype" column="cardtype"/>
+        <result property="cardno" column="cardno"/>
+        <result property="roomid" column="roomid"/>
+        <result property="num" column="num"/>
+        <result property="totalprice" column="totalprice"/>
+        <result property="cstate" column="cstate"/>
+        <result property="checkinTime" column="checkinTime"/>
+        <result property="leaveTime" column="leaveTime"/>
+        <association property="rooms" javaType="Rooms">
+            <id property="roomid" column="roomid"/>
+            <result property="roomtype" column="roomtype"/>
+            <result property="price" column="price"/>
+            <result property="state" column="state"/>
+        </association>
+    </resultMap>
+    <select id="findBycstate" resultMap="checkins">
+        select c.roomid,name,checkintime,num,price from checkins c left join rooms r on
+          c.roomid=r.roomid where cstate=1
+    </select>
+
+</mapper>
