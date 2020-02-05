@@ -21,4 +21,9 @@ public class HotelTest {
         roomMapper.findRoomIds("双人间").forEach(roomstype-> System.out.println(roomstype));
     }
 
+    @Test
+    public void test1(){
+        System.out.println("我在测试。。。");
+    }
+
 }
