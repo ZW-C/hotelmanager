@@ -23,7 +23,8 @@ public class HotelTest {
 
     @Test
     public void test1(){
-        System.out.println("我在测试。。。");
+        System.out.println("我在测试。。。哈哈");
+        
     }
 
 }
